@@ -1,10 +1,10 @@
 {
   "name": "learning-recompose",
   "version": "0.1.0",
+  "license": "MIT",
   "author": "Cody Brunner <rockchalkwushock@icloud.com> (https://rcws-development.com)",
   "description": "Quick repo to learn some of the utils the Recompose library offers",
   "repository": "https://github.com/rockchalkwushock/learning-recompose.git",
-  "private": true,
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4",

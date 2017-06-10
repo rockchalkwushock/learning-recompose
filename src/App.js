@@ -1,21 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import Button from './Button'
 
 class App extends Component {
+  state = { count: 0 }
+  _onClick = () => {
+    this.setState({ count: this.state.count + 1 })
+  }
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div
+        style={{
+          alignItems: 'center',
+          display: 'flex',
+          flexDirection: 'column'
+        }}
+        className="App"
+      >
+        <Button style={{ color: 'blue' }} clicked={this._onClick} />
+        <h4>{this.state.count}</h4>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
