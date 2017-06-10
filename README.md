@@ -1,20 +1,15 @@
-# withHandlers()
+# defaultProps()
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## API
 
 ```js
-withHandlers(
-  handlerCreators: {
-    [handlerName: string]: (props: Object) => Function
-  } |
-  handlerCreatorsFactory: (initialProps) => {
-    [handlerName: string]: (props: Object) => Function
-  }
+defaultProps(
+  props: Object
 ): HigherOrderComponent
 ```
 
 ## Screenshot
 
-Coming Soon
+![defaultProps](https://github.com/rockchalkwushock/learning-recompose/blob/defaultProps/screenshots/defaultProps.png)

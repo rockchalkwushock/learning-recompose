@@ -1,47 +1,32 @@
 import React from 'react'
-import { compose, withHandlers, withState } from 'recompose'
+import { defaultProps } from 'recompose'
 import Button from './Button'
 
 /**
  * @summary
- * withHandlers is a HOC for creating event handlers that are
- * sent to the ComposedComponent as immutable props.
- * The HOC accepts props as an argument & returns a function.
- * So as in the example we are creating this.props.onClick just
- * as we would in a class based component & we are incrementing
- * the 'state' value 'count' by one each time the event is fired.
- *
- * The fact the event handler is now immutable means that it will not
- * need to be recreated on every render. This means that when
- * shouldComponentUpdate() looks to see if <App /> needs to render itself
- * again, if we were not updating the view with the count React would not
- * preform a rerender because their is no need to reconstruct the event
- * handler passed down to <Button />.
+ * defaultProps is an HOC for providing the functional component
+ * with a set of props to use upon initial render before any events
+ * are carried out that drive new values for those props, or in the event
+ * that data is not fetched that should be provided on props these defaults
+ * will be used instead. No different than the class usage.
  */
 
-const enhance = compose(
-  withState('count', 'inc', 0),
-  withHandlers({
-    onClick: props => e => {
-      props.inc(props.count + 1)
-    }
-  })
-)
+const enhance = defaultProps({
+  style: {
+    alignItems: 'center',
+    backgroundColor: 'lightblue',
+    display: 'flex',
+    flexDirection: 'column'
+  },
+  greeting: 'Hello World from Recompose!',
+  count: 0
+})
 
-const App = ({ count, onClick }) =>
-  <div
-    className="App"
-    style={{
-      alignItems: 'center',
-      display: 'flex',
-      flexDirection: 'column'
-    }}
-  >
-    <Button
-      clicked={onClick}
-      style={{ backgroundColor: 'lightsalmon', color: 'blue' }}
-    />
-    <h4>{count}</h4>
+const App = props =>
+  <div className="App" style={props.style}>
+    <h2>{props.greeting}</h2>
+    <Button style={{ backgroundColor: 'lightsalmon', color: 'blue' }} />
+    <h4>{props.count}</h4>
   </div>
 
 export default enhance(App)
