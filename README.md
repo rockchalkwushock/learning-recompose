@@ -1,16 +1,20 @@
-# withPropsOnChange()
+# withHandlers()
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## API
 
 ```js
-withPropsOnChange(
-  shouldMapOrKeys: Array<string> | (props: Object, nextProps: Object) => boolean,
-  createProps: (ownerProps: Object) => Object
+withHandlers(
+  handlerCreators: {
+    [handlerName: string]: (props: Object) => Function
+  } |
+  handlerCreatorsFactory: (initialProps) => {
+    [handlerName: string]: (props: Object) => Function
+  }
 ): HigherOrderComponent
 ```
 
 ## Screenshot
 
-![withPropsOnChange](https://github.com/rockchalkwushock/learning-recompose/blob/withPropsOnChange/screenshots/withPropsOnChange.gif)
+Coming Soon
