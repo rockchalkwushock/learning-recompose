@@ -1,0 +1,22 @@
+{
+  "name": "learning-recompose",
+  "version": "0.1.0",
+  "author": "Cody Brunner <rockchalkwushock@icloud.com> (https://rcws-development.com)",
+  "description": "Quick repo to learn some of the utils the Recompose library offers",
+  "repository": "https://github.com/rockchalkwushock/learning-recompose.git",
+  "private": true,
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "recompose": "~0.23.5"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
