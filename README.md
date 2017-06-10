@@ -12,4 +12,4 @@ mapProps(
 
 ## Screenshot
 
-![mapProps](https://github.com/rockchalkwushock/learning-recompose/tree/mapProps/screenshots/mapProps.png)
+![mapProps](https://github.com/rockchalkwushock/learning-recompose/blob/mapProps/screenshots/mapProps.png)
