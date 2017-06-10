@@ -1,27 +1,19 @@
 import React from 'react'
-import { mapProps } from 'recompose'
+import { withProps } from 'recompose'
 
 /**
  * @summary
- * mapProps acts just as .map() does by transforming
- * the iterable.
- *
- * NOTE:
- * In the screenshot in the README.md you can see that:
- * enhance(Button) has color: 'blue' & no backgroundColor set.
- * After the enhancement has been made to the component:
- * Button has color: 'red' & backgroundColor: 'yellow'
+ * withProps is an HOC for passing props to a child component.
+ * This is a great HOC for using when needing to present mock
+ * data to a child component, for instance a blog post that needs
+ * to render the title, text, & author.
  */
-
-/**
- * mapProps excepts a function as its argument as do HOC's/HOF's.
- * In this function we pass props as the argument, but use ES6 to deconstruct the object.
- * We are specifically wanting to transform the style object of props; but it is necessary
- * to pass the rest of the props (...rest) or our Button loses the ability to be clicked &
- * yield a state update to count.
- */
-const enhance = mapProps(({ style, ...rest }) => {
-  return { ...rest, style: { color: 'red', backgroundColor: 'yellow' } }
+const enhance = withProps({
+  style: {
+    fontSize: '1.5em',
+    color: '#34aa11',
+    backgroundColor: '#000'
+  }
 })
 
 const Button = ({ clicked, style }) =>
