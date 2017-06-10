@@ -13,4 +13,4 @@ withPropsOnChange(
 
 ## Screenshot
 
-![withPropsOnChange](https://github.com/rockchalkwushock/learning-recompose/tree/withPropsOnChange/screenshots/withPropsOnChange.gif)
+![withPropsOnChange](https://github.com/rockchalkwushock/learning-recompose/blob/withPropsOnChange/screenshots/withPropsOnChange.gif)
