@@ -2,11 +2,16 @@ import React, { Component } from 'react'
 import Button from './Button'
 
 class App extends Component {
-  state = { count: 0 }
+  state = { count: 0, wildCard: false }
   _onClick = () => {
-    this.setState({ count: this.state.count + 1 })
+    const { count } = this.state
+    this.setState({ count: count + 1 })
+    if (count >= 5) {
+      this.setState({ wildCard: true })
+    }
   }
   render() {
+    const { count, wildCard } = this.state
     return (
       <div
         style={{
@@ -16,8 +21,12 @@ class App extends Component {
         }}
         className="App"
       >
-        <Button style={{ color: 'blue' }} clicked={this._onClick} />
-        <h4>{this.state.count}</h4>
+        <Button
+          clicked={this._onClick}
+          wildCard={wildCard}
+          style={{ color: 'blue' }}
+        />
+        <h4>{count}</h4>
       </div>
     )
   }

@@ -1,20 +1,23 @@
 import React from 'react'
-import { withProps } from 'recompose'
+import { withPropsOnChange } from 'recompose'
 
 /**
  * @summary
- * withProps is an HOC for passing props to a child component.
- * This is a great HOC for using when needing to present mock
- * data to a child component, for instance a blog post that needs
- * to render the title, text, & author.
+ * withPropsOnChange is an HOC that implements the React.Component
+ * lifecycle componentWillReceiveProps by taking in 2 arguments:
+ * 1. Array<String> | (props, nextProps) => Boolean
+ * 2. props => Object
+ * withPropsOnChange will look to see if the declared props exists.
+ * If yes then we return whatever props/changes to props we want;
+ * if no then we make no changes on props.
  */
-const enhance = withProps({
-  style: {
-    fontSize: '1.5em',
-    color: '#34aa11',
-    backgroundColor: '#000'
-  }
-})
+const enhance = withPropsOnChange(
+  ['wildCard'],
+  props =>
+    props.wildCard
+      ? { ...props, style: { backgroundColor: 'yellow', color: 'purple' } }
+      : props
+)
 
 const Button = ({ clicked, style }) =>
   <button style={style} onClick={clicked} type="submit">Submit</button>

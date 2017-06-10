@@ -1,15 +1,16 @@
-# withProps()
+# withPropsOnChange()
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## API
 
 ```js
-withProps(
-  createProps: (ownerProps: Object) => Object | Object
+withPropsOnChange(
+  shouldMapOrKeys: Array<string> | (props: Object, nextProps: Object) => boolean,
+  createProps: (ownerProps: Object) => Object
 ): HigherOrderComponent
 ```
 
 ## Screenshot
 
-![withProps](https://github.com/rockchalkwushock/learning-recompose/tree/withProps/screenshots/withProps.png)
+![withPropsOnChange](https://github.com/rockchalkwushock/learning-recompose/tree/withPropsOnChange/screenshots/withPropsOnChange.gif)
